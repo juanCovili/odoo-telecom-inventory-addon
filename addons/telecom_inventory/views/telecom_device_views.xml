@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista Lista (Tree View) -->
+    <record id="view_telecom_device_tree" model="ir.ui.view">
+        <field name="name">telecom.device.tree</field>
+        <field name="model">telecom.device</field>
+        <field name="arch" type="xml">
+            <tree string="Equipos de Telecomunicaciones" decoration-success="status == 'installed'" decoration-info="status == 'in_stock'" decoration-warning="status == 'assigned'" decoration-danger="status == 'scrapped'">
+                <field name="serial_number"/>
+                <field name="name"/>
+                <field name="device_type"/>
+                <field name="mac_address"/>
+                <field name="status" widget="badge" decoration-success="status == 'installed'" decoration-info="status == 'in_stock'" decoration-warning="status == 'assigned'" decoration-danger="status == 'scrapped'"/>
+                <field name="partner_id"/>
+                <field name="technician_id"/>
+                <field name="installation_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Formulario (Form View) -->
+    <record id="view_telecom_device_form" model="ir.ui.view">
+        <field name="name">telecom.device.form</field>
+        <field name="model">telecom.device</field>
+        <field name="arch" type="xml">
+            <form string="Ficha Técnica de Dispositivo">
+                <header>
+                    <button name="action_set_in_stock" string="Devolver a Bodega" type="object" class="btn-secondary" invisible="status == 'in_stock'"/>
+                    <button name="action_set_installed" string="Marcar como Instalado" type="object" class="btn-primary" invisible="status == 'installed'"/>
+                    <field name="status" widget="statusbar" statusbar_visible="in_stock,assigned,installed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1><field name="name" placeholder="Ej. Router Huawei GPON AX3000"/></h1>
+                    </div>
+                    <group>
+                        <group string="Identificación de Hardware">
+                            <field name="serial_number"/>
+                            <field name="mac_address"/>
+                            <field name="device_type"/>
+                            <field name="ip_address"/>
+                        </group>
+                        <group string="Asignación y Logística">
+                            <field name="partner_id"/>
+                            <field name="technician_id"/>
+                            <field name="installation_date"/>
+                            <field name="warranty_expire_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Detalles &amp; Observaciones">
+                            <field name="notes" placeholder="Notas sobre enlaces, pruebas de potencia óptica, configuración de puertos..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción de Ventana -->
+    <record id="action_telecom_device" model="ir.actions.act_window">
+        <field name="name">Equipos de Red y Enlaces</field>
+        <field name="res_model">telecom.device</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Registra el primer equipo de telecomunicaciones en el inventario.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menú Principal -->
+    <menuitem id="menu_telecom_root" name="Telecom IT" sequence="10" web_icon="telecom_inventory,static/description/icon.png"/>
+    <menuitem id="menu_telecom_devices" name="Inventario de Equipos" parent="menu_telecom_root" action="action_telecom_device" sequence="10"/>
+</odoo>

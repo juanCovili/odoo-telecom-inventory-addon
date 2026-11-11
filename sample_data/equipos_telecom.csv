@@ -1,0 +1,6 @@
+serial_number,name,device_type,mac_address,ip_address,status
+SN-HUA-9821,ONU Huawei HG8245H GPON,onu,48:57:02:11:AB:12,192.168.100.1,in_stock
+SN-MIK-4412,Router MikroTik hEX RB750Gr3,router,6C:3B:6B:44:12:01,192.168.88.1,in_stock
+SN-UBI-7729,Antena Ubiquiti LiteBeam 5AC Gen2,antenna,B4:FB:E4:77:29:A0,192.168.1.20,assigned
+SN-TPL-3390,Switch TP-Link 24 Puertos Gigabit,switch,98:DA:C4:33:90:5E,192.168.1.2,installed
+SN-DAH-1102,Cámara IP Dahua 4MP Domo Exterior,cctv,3C:EF:8C:11:02:88,192.168.1.105,installed
