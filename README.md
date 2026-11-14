@@ -83,7 +83,16 @@ El servicio estará disponible de inmediato en tu navegador en:
 
 ## 👨‍💻 Autor
 
-**Juan Andrés Covili Cabezas**  
+**Juan Covili**  
 *Ingeniero en Informática y Analista Programador (INACAP Sede Los Ángeles)*  
 🌐 Portafolio: [juancovili.com](https://juancovili.com)  
 💼 LinkedIn: [linkedin.com/in/juan-covili-02b2a114b](https://www.linkedin.com/in/juan-covili-02b2a114b)
+
+---
+
+## Autor y Copyright
+
+**Juan Covili** — Copyright (c) 2026 Juan Covili  
+- **GitHub:** [github.com/juanCovili/odoo-telecom-inventory-addon](https://github.com/juanCovili/odoo-telecom-inventory-addon)  
+- **Portafolio:** [juancovili.com](https://juancovili.com)  
+- **Licencia:** Ver [`LICENSE`](./LICENSE) (disponible para evaluación técnica y revisión de portafolio con atribución obligatoria a Juan Covili; prohibido eliminar marcas de autoría o reclamar autoría).

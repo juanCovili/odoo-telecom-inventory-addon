@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
+# @project   Odoo Telecom Inventory & Network Devices Addon
+# @author    Juan Covili <https://github.com/juanCovili>
+# @repo      https://github.com/juanCovili/odoo-telecom-inventory-addon
+# @portfolio https://juancovili.com
+# @copyright Copyright (c) 2026 Juan Covili. Todos los derechos reservados.
 """
 Script de importación y sincronización masiva de inventario telecom a Odoo vía XML-RPC.
 Permite cargar catálogos desde archivos CSV exportados de Excel.
 """
+
+__author__ = "Juan Covili"
+__github__ = "https://github.com/juanCovili"
+__portfolio__ = "https://juancovili.com"
 
 import csv
 import xmlrpc.client
